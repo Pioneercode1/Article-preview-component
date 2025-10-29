@@ -146,6 +146,12 @@ body {
     color: var(--grayish-blue);
 }
 
+#img-icon-hidden {
+    transform: scaleX(-1);
+    width: 24px;
+    height: 24px;
+}
+
 .avatar-container-none {
     display: none;
 }
@@ -175,4 +181,42 @@ body {
         height: 110%;
         object-fit: cover;
     }
+
+    /* the styles for active */
+    /* 
+    .share-component-block {
+        position: absolute;
+        bottom: 5%;
+        right: 10%;
+        width: 20%;
+        min-height: 100px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 27%, 59% 27%, 58% 44%, 42% 28%, 0 28%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        transition: all 2s ease-in-out;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icons p {
+        letter-spacing: 0px;
+        font-size: 0.5rem;
+    }
+
+    .icon-share {
+        width: 20px;
+        height: 20px;
+        padding: 0px;
+    }
+
+    .icon-share img {
+        width: 16px;
+        height: 16px;
+    } */
 }
