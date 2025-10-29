@@ -1,0 +1,103 @@
+:root {
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --whit: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.manrope-font-style {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-component {
+    width: clamp(320px, 50%, 38rem);
+    min-height: 499px;
+    background-color: var(--whit);
+    border-radius: 8px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.image-hero {
+    margin-block-end: 2rem;
+    width: 100%;
+}
+
+.image-hero img {
+    width: 100%;
+}
+
+.description-component {
+    padding-inline: 2rem;
+    width: 100%;
+    margin-block-end: 2rem;
+    line-height: 1.6;
+}
+
+.description-component p:first-child {
+    font-size: clamp(0.9rem, 0.6rem + 1.6vw, 1.2rem);
+    font-weight: 700;
+    margin-block-end: 1rem;
+}
+
+.description-component p:nth-of-type(2) {
+    font-size: clamp(0.7rem, 0.5rem + 1.5vw, 0.9rem);
+    color: var(--grayish-blue);
+    margin-block-end: 1rem;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: 2rem;
+}
+
+.avatar-container img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.avatar-info p:first-child {
+    font-size: clamp(0.8rem, 0.6rem + 1.5vw, 1rem);
+    font-weight: 700;
+}
+
+.avatar-info p:nth-of-type(2) {
+    font-size: clamp(0.7rem, 0.5rem + 1.5vw, 0.9rem);
+    color: var(--grayish-blue);
+}
+
+.icon-share {
+    width: 36px;
+    height: 36px;
+    background-color: var(--light-grayish-blue);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.icon-share img {
+    width: 24px;
+    height: 24px;
+}
