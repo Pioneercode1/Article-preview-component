@@ -29,7 +29,7 @@ body {
 }
 
 .container-component {
-    width: clamp(320px, 50%, 38rem);
+    width: clamp(320px, 50%, 30rem);
     min-height: 499px;
     background-color: var(--white);
     border-radius: 8px;
@@ -144,11 +144,11 @@ body {
     color: var(--grayish-blue);
 }
 
-.share-component-none {
+.avatar-container-none {
     display: none;
 }
 
-.avatar-container-none {
+.share-component-none {
     display: none;
 }
 
