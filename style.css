@@ -30,7 +30,7 @@ body {
 
 .container-component {
     width: clamp(320px, 50%, 30rem);
-    min-height: 500px;
+    min-height: 490px;
     padding-block-end: 1rem;
     background-color: var(--white);
     border-radius: 8px;
@@ -42,16 +42,12 @@ body {
 .image-hero {
     margin-block-end: 2rem;
     width: 100%;
-    height: 40%;
 }
 
 .image-hero img {
     width: 100%;
-    height: 90%;
     object-fit: cover;
 }
-
-.container-description {height: 60%;}
 
 .description-component {
     padding-inline: 2rem;
@@ -163,10 +159,11 @@ body {
 @media (min-width: 1440px) {
     .container-component {
         width: clamp(470px, 80%, 58rem);
-        min-height: 340px;
+        min-height: 280px;
         display: flex;
         justify-content: center;
         align-items: stretch;
+        padding: 0;
     }
 
     .description-component p:first-child {
@@ -175,7 +172,7 @@ body {
     }
 
     .image-hero img {
-        height: 112%;
+        height: 110%;
         object-fit: cover;
     }
 }
