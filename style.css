@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .container-component {
@@ -34,11 +35,12 @@ body {
     padding-block-end: 1rem;
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
     overflow: hidden;
     position: relative;
 }
 
+/* Hero image */
 .image-hero {
     margin-block-end: 2rem;
     width: 100%;
@@ -47,8 +49,10 @@ body {
 .image-hero img {
     width: 100%;
     object-fit: cover;
+    object-position: 0;
 }
 
+/* Description */
 .description-component {
     padding-inline: 2rem;
     width: 100%;
@@ -56,18 +60,19 @@ body {
     line-height: 1.5;
 }
 
-.description-component p:first-child {
+.article-title {
     font-size: clamp(0.9rem, 0.6rem + 1.6vw, 1.2rem);
     font-weight: 700;
     margin-block-end: 1rem;
 }
 
-.description-component p:nth-of-type(2) {
+.article-excerpt {
     font-size: clamp(0.7rem, 0.5rem + 1.5vw, 0.9rem);
     color: var(--grayish-blue);
     margin-block-end: 1rem;
 }
 
+/* Avatar row */
 .avatar-container {
     display: flex;
     justify-content: space-between;
@@ -76,39 +81,41 @@ body {
     padding-inline: 2rem;
 }
 
-.avatar-container img {
+.avatar-image img {
     width: 42px;
     height: 42px;
     border-radius: 50%;
 }
 
-.avatar-info p:first-child {
+.avatar-info .author-name {
     font-size: clamp(0.8rem, 0.6rem + 1.5vw, 1rem);
     font-weight: 700;
 }
 
-.avatar-info p:nth-of-type(2) {
+.avatar-info .publish-date {
     font-size: clamp(0.7rem, 0.5rem + 1.5vw, 0.9rem);
     color: var(--grayish-blue);
 }
 
+/* Share icon/button */
 .icon-share {
     width: 36px;
     height: 36px;
     background-color: var(--light-grayish-blue);
     border-radius: 50%;
     padding: 5px;
-    transition: background-color 0.4s;
+    transition: background-color 0.25s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 
-.icon-share:hover {
-    cursor: pointer;
-    background-color: var(--grayish-blue);
-}
-
+.icon-share:hover,
 .icon-share:focus {
     cursor: pointer;
     background-color: var(--grayish-blue);
+    outline: none;
 }
 
 .icon-share img {
@@ -116,7 +123,14 @@ body {
     height: 24px;
 }
 
-/* the styles for active */
+/* Mobile share panel (active) */
+.share-component {
+    transition: all 0.2s ease-in-out;
+}
+
+.share-component-none {
+    display: none;
+}
 
 .share-component-block {
     position: absolute;
@@ -130,7 +144,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    transition: all 0.3s ease-in-out;
+    color: var(--white);
 }
 
 .icons {
@@ -152,16 +166,7 @@ body {
     height: 24px;
 }
 
-.avatar-container-none {
-    display: none;
-}
-
-.share-component-none {
-    display: none;
-}
-
-/* desktop design */
-
+/* Desktop design */
 @media (min-width: 1440px) {
     .container-component {
         width: clamp(470px, 80%, 58rem);
@@ -172,7 +177,7 @@ body {
         padding: 0;
     }
 
-    .description-component p:first-child {
+    .article-title {
         padding-block-start: 2rem;
         font-size: clamp(1rem, 0.8rem + 1.6vw, 1.4rem);
     }
@@ -182,41 +187,52 @@ body {
         object-fit: cover;
     }
 
-    /* the styles for active */
-    /* 
-    .share-component-block {
+    /* Desktop share bubble (hidden by default) */
+    .share-component-desktop {
         position: absolute;
-        bottom: 5%;
-        right: 10%;
-        width: 20%;
-        min-height: 100px;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 27%, 59% 27%, 58% 44%, 42% 28%, 0 28%);
+        bottom: 50px;
+        right: 16px;
+        background-color: var(--dark-grayish-blue);
+        color: white;
+        border-radius: 8px;
+        padding: 10px 15px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        gap: 5px;
-        transition: all 2s ease-in-out;
+        gap: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        z-index: 30;
     }
 
-    .icons {
+    .share-component-desktop::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        right: 22px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid var(--dark-grayish-blue);
+    }
+
+    .share-component-desktop-hidden {
+        display: none;
+    }
+
+    .share-component-desktop-visible {
         display: flex;
-        justify-content: center;
+    }
+
+    .desktop-share-label {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        color: var(--grayish-blue);
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 12px;
         align-items: center;
     }
-
-    .icons p {
-        letter-spacing: 0px;
-        font-size: 0.5rem;
-    }
-
-    .icon-share {
-        width: 20px;
-        height: 20px;
-        padding: 0px;
-    }
-
-    .icon-share img {
-        width: 16px;
-        height: 16px;
-    } */
 }

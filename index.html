@@ -2,65 +2,72 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Fonts Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
   <title>Frontend Mentor | Article preview component</title>
-
 </head>
 
 <body class="manrope-font-style">
-  <article class="container-component">
+  <article class="container-component" aria-label="Article preview component">
     <div class="image-hero">
-      <img src="./images/drawers.jpg" alt="avatar cartoon image" width="320" height="160">
+      <img src="./images/drawers.jpg" alt="drawers" width="320" height="160" />
     </div>
 
     <div class="container-description">
       <div class="description-component">
-        <p>Shift the overall look and feel by adding these wonderful
-          touches to furniture in your home</p>
-        <p>Ever been in a room and felt like something was missing? Perhaps
-          it felt slightly bare and uninviting. I’ve got some simple tips
-          to help you make any room feel complete.</p>
+        <p class="article-title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</p>
+        <p class="article-excerpt">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
       </div>
 
       <div class="avatar-container">
-        <div>
-          <img src="./images/smallcartoon.jpg" alt="avatar cartoon image" width="32">
+        <div class="avatar-image">
+          <img src="./images/smallcartoon.jpg" alt="Michelle Appleton" width="42" height="42" />
         </div>
         <div class="avatar-info">
-          <p>Michelle Appleton</p>
-          <p>28 Jun 2020</p>
+          <p class="author-name">Michelle Appleton</p>
+          <p class="publish-date">28 Jun 2020</p>
         </div>
-        <div class="icon-share">
-          <img id="img-icon-share" src="./images/icon-share.svg" alt="icon share" width="24" height="24">
-        </div>
+
+        <!-- Share icon (the interactive button) -->
+        <button id="btn-share" class="icon-share" aria-expanded="false" aria-label="Share article">
+          <img id="img-icon-share" src="./images/icon-share.svg" alt="Share icon" width="24" height="24" />
+        </button>
       </div>
     </div>
 
-    <div class="share-component-none">
+    <!-- Mobile share panel (bottom full-width) -->
+    <div id="share-tooltip" class="share-component share-component-none" role="dialog" aria-hidden="true">
       <div class="icons">
         <p>SHARE</p>
-        <img src="./images/icon-facebook.svg" alt="icon share" width="24">
-        <img src="./images/icon-twitter.svg" alt="icon share" width="24">
-        <img src="./images/icon-pinterest.svg" alt="icon share" width="24">
+        <img src="./images/icon-facebook.svg" alt="Facebook" width="24" height="24" />
+        <img src="./images/icon-twitter.svg" alt="Twitter" width="24" height="24" />
+        <img src="./images/icon-pinterest.svg" alt="Pinterest" width="24" height="24" />
       </div>
       <div class="icon-share">
-        <img id="img-icon-hidden" src="./images/icon-share.svg" alt="icon share" width="24" height="24">
+        <img id="img-icon-hidden" src="./images/icon-share.svg" alt="Share icon" width="24" height="24" />
+      </div>
+    </div>
+
+    <!-- Desktop share bubble -->
+    <div id="share-tooltip-desktop" class="share-component-desktop share-component-desktop-hidden" role="dialog" aria-hidden="true">
+      <p class="desktop-share-label" style="display: none;">SHARE</p>
+      <div class="social-icons">
+        <img src="./images/icon-facebook.svg" alt="Facebook" width="24" height="24" />
+        <img src="./images/icon-twitter.svg" alt="Twitter" width="24" height="24" />
+        <img src="./images/icon-pinterest.svg" alt="Pinterest" width="24" height="24" />
       </div>
     </div>
   </article>
-
 </body>
 
 </html>
